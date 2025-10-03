@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart | He Reigns Enterprise</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/home-icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Paystack Script for Payment Integration -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- EmailJS Script and Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("5OIiP0wNG9IN79_su");
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar (same as other pages) -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">He Reigns Enterprise</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html" class="cart-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cart Content -->
+  <section class="cart-section">
+    <div class="container">
+      <h2 class="section-title">Your Cart</h2>
+      <div id="cart-items"></div>
+      <div id="cart-summary"></div>
+      <div id="cart-actions"></div>
+    </div>
+  </section>
+
+  <!-- Payment Modal -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content" id="payment-modal-content">
+      <!-- Content will be injected by JS -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">
+        <span>He Reigns Enterprise</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://web.facebook.com/juliana.aduboahen" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/233553744087" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="container copyright">
+      &copy; 2025 He Reigns Enterprise. All rights reserved.
+    </div>
+  </footer>
+  <script src="cart.js"></script>
+</body>
+</html>

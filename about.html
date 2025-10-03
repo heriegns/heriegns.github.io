@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | He Reigns Enterprise</title>
+  <meta name="description" content="Discover the mission, values, and story behind He Reigns Enterprise. We bring comfort and style to homes in Ghana with premium essentials.">
+  <meta name="keywords" content="about, He Reigns Enterprise, home essentials, Ghana, mission, story, values">
+  <meta name="author" content="He Reigns Enterprise">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #7f3bb3;
+      --accent: #e6cba8;
+      --bg-soft: #f6ede2;
+      --bg-gradient: linear-gradient(110deg, #f6ede2 60%, #d2e5f3 100%);
+      --text: #3e3147;
+      --text-soft: #513266;
+      --success: #2ab573;
+    }
+    /* HERO */
+    .about-hero {
+      position: relative;
+      background: var(--bg-gradient);
+      min-height: 340px;
+      padding: 4.3rem 0 2.2rem 0;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .about-hero .bg-shapes {
+      pointer-events: none;
+      z-index: 0;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+    .about-hero h1 {
+      font-size: 2.7rem;
+      color: var(--primary);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      margin-bottom: 0.7rem;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 32px #fff3;
+      line-height: 1.13;
+      position: relative;
+      z-index: 2;
+      animation: fadeInDown 0.9s cubic-bezier(.61,.09,.61,1.02) both;
+    }
+    .about-hero .mission {
+      color: var(--text-soft);
+      font-size: 1.19rem;
+      font-weight: 500;
+      max-width: 530px;
+      margin: 0.5rem auto 0 auto;
+      letter-spacing: 0.18px;
+      z-index: 2;
+      position: relative;
+      animation: fadeInUp 0.98s 0.20s both;
+    }
+    @media (max-width: 900px) {
+      .about-hero {
+        padding: 3rem 4vw 1.5rem 4vw;
+        min-height: unset;
+      }
+      .about-hero h1 { font-size: 2rem;}
+      .about-hero .mission { font-size: 1rem; max-width: 97vw;}
+    }
+    @media (max-width: 600px) {
+      .about-hero {
+        padding: 2rem 2vw 1rem 2vw;
+      }
+      .about-hero h1 { font-size: 1.25rem; }
+      .about-hero .mission { font-size: .96rem; }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-48px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(48px);}
+      to { opacity: 1; transform: none;}
+    }
+    /* WHY CHOOSE US CARDS */
+    .why-choose {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      margin: 2.9rem auto 2.5rem auto;
+      max-width: 1100px;
+      animation: fadeInUp 1.1s both;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 2px 24px #b89be630;
+      padding: 2rem 1.3rem 1.7rem 1.3rem;
+      flex: 1 1 210px;
+      max-width: 330px;
+      min-width: 200px;
+      text-align: center;
+      transition: transform 0.16s, box-shadow 0.16s;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card:hover, .why-card:focus-within {
+      transform: translateY(-6px) scale(1.045);
+      box-shadow: 0 8px 36px #7f3bb340;
+      z-index: 3;
+    }
+    .why-card .icon {
+      font-size: 2.7rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 3px 12px #b89be625);
+    }
+    .why-card h3 {
+      font-size: 1.13rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.28rem;
+      letter-spacing: 0.22px;
+    }
+    .why-card p {
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    @media (max-width: 900px) {
+      .why-choose {
+        flex-direction: column;
+        gap: 1.3rem;
+        margin: 2rem 0 1.5rem 0;
+        align-items: center;
+      }
+      .why-card {
+        max-width: 97vw;
+        min-width: 0;
+        padding: 1.2rem 0.6rem;
+        border-radius: 14px;
+        font-size: .97rem;
+      }
+    }
+    /* STORY & HIGHLIGHTS */
+    .about-story-section {
+      background: #fff;
+      padding: 2.8rem 0 2.8rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-img {
+      flex: 1 1 345px;
+      min-width: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInLeft 1s both;
+    }
+    .about-img img {
+      width: 350px;
+      max-width: 92vw;
+      border-radius: 44px 44px 90px 44px;
+      box-shadow: 0 8px 36px #b89be630;
+      background: #f6ede2;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border: 2.5px solid #fff;
+      filter: brightness(0.99) saturate(1.04);
+      transition: width 0.2s, max-width 0.2s, border-radius 0.2s;
+    }
+    .about-text {
+      flex: 2 1 390px;
+      min-width: 240px;
+      animation: fadeInRight 1s both;
+      text-align: left;
+    }
+    .about-text h2 {
+      color: var(--primary);
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      line-height: 1.19;
+    }
+    .about-text p {
+      font-size: 1.17rem;
+      color: var(--text);
+      margin-bottom: 1.17rem;
+      line-height: 1.73;
+    }
+    .about-highlights {
+      margin-top: 1.7rem;
+      padding-left: 0;
+      list-style: none;
+      color: var(--primary);
+    }
+    .about-highlights li {
+      margin-bottom: .7rem;
+      padding-left: 1.6em;
+      position: relative;
+      font-size: 1.08rem;
+      color: var(--text-soft);
+    }
+    .about-highlights li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.1em;
+      top: 0;
+    }
+    @media (max-width: 900px) {
+      .about-story-section {
+        padding: 1.2rem 0 1.2rem 0;
+      }
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 2vw;
+      }
+      .about-img {
+        min-width: 0;
+        width: 100%;
+        justify-content: center;
+      }
+      .about-img img {
+        width: 60vw;
+        max-width: 240px;
+        border-radius: 18px;
+      }
+      .about-text {
+        min-width: 0;
+        width: 100%;
+        padding: 0 0.2rem;
+        text-align: center;
+      }
+      .about-text h2 {
+        font-size: 1.1rem;
+        margin-bottom: .7rem;
+      }
+      .about-text p {
+        font-size: 1rem;
+        margin-bottom: .9rem;
+        line-height: 1.5;
+      }
+      .about-highlights {
+        padding-left: 0;
+        margin-top: 1rem;
+        font-size: .98rem;
+        text-align: left;
+        max-width: 98vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .about-highlights li {
+        margin-bottom: .5rem;
+        padding-left: 1.3em;
+        font-size: .98rem;
+        word-break: break-word;
+      }
+    }
+    @media (max-width: 480px) {
+      .about-img img {
+        width: 90vw;
+        max-width: 140px;
+        border-radius: 10px;
+      }
+    }
+    /* TESTIMONIALS */
+    .testimonials-section {
+      background: var(--bg-soft);
+      padding: 2.7rem 0 2.3rem 0;
+      text-align: center;
+    }
+    .testimonials-section h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+    .testimonials-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.3rem;
+      justify-content: center;
+      align-items: stretch;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 18px #b89be630;
+      flex: 1 1 220px;
+      min-width: 200px;
+      max-width: 380px;
+      padding: 1.3rem 1.2rem 1.2rem 1.2rem;
+      text-align: left;
+      transition: box-shadow 0.19s, max-width 0.2s, padding 0.2s;
+      font-size: 1.05rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .testimonial-card .author {
+      margin-top: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.01rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .testimonial-card .author i {
+      color: var(--success);
+      font-size: 1.25em;
+    }
+    .testimonial-card:before {
+      content: "❝";
+      font-size: 2.2rem;
+      color: #e6cba8;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      opacity: 0.6;
+    }
+    @media (max-width: 900px) {
+      .testimonials-section {
+        padding: 1.3rem 0 1.3rem 0;
+      }
+      .testimonials-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: .9rem;
+      }
+      .testimonials-list {
+        flex-direction: column;
+        gap: 1.2rem;
+        max-width: 98vw;
+      }
+      .testimonial-card {
+        max-width: 85vw;
+        min-width: 0;
+        padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+        border-radius: 10px;
+        font-size: .91rem;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 600px) {
+      .testimonial-card {
+        max-width: 97vw;
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+        border-radius: 9px;
+        font-size: .87rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .testimonial-card {
+        max-width: 99vw;
+        padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+        border-radius: 7px;
+        font-size: .81rem;
+      }
+    }
+    /* FOUNDER QUOTE */
+    .founder-section {
+      background: linear-gradient(100deg, #efe2ff 60%, #e6cba8 100%);
+      padding: 2.5rem 0 2.2rem 0;
+      text-align: center;
+    }
+    .founder-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #513266;
+      max-width: 650px;
+      margin: 0 auto 0.9rem auto;
+    }
+    .founder-name {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.06rem;
+      letter-spacing: 1px;
+      margin-top: 0.7rem;
+    }
+    @media (max-width: 900px) {
+      .founder-section {
+        padding: 1.3rem 0 1.1rem 0;
+      }
+      .founder-quote {
+        font-size: 1rem;
+        max-width: 98vw;
+      }
+      .founder-name {
+        font-size: .98rem;
+      }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-38px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(38px);}
+      to { opacity: 1; transform: none;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="He Reigns Enterprise Home">He Reigns Enterprise</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" tabindex="0" aria-label="Toggle navigation"><span></span></label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="Shopping Cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-badge" aria-live="polite">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Animated Hero Section -->
+  <header class="about-hero" aria-labelledby="about-hero-heading">
+    <svg class="bg-shapes" width="100%" height="100%">
+      <circle cx="80" cy="100" r="65" fill="#e6cba875"/>
+      <circle cx="95%" cy="45" r="44" fill="#b89be625"/>
+      <ellipse cx="60%" cy="95%" rx="62" ry="30" fill="#efe2ff33"/>
+    </svg>
+    <h1 id="about-hero-heading">About He Reigns Enterprise</h1>
+    <div class="mission">
+      Bringing comfort and style to every home in Ghana.<br>
+      Discover our story, our values, and why thousands trust us for premium essentials.
+    </div>
+  </header>
+
+  <!-- Why Choose Us Cards -->
+  <section class="why-choose" aria-label="Why Choose Us">
+    <div class="why-card" tabindex="0">
+      <span class="icon"><i class="fas fa-star"></i></span>
+      <h3>Premium Quality</h3>
+      <p>Handpicked materials &amp; craftsmanship for lasting comfort and beauty.</p>
+    </div>
+    <div class="why-card" tabindex="0">
+      <span class="icon"><i class="fas fa-heart"></i></span>
+      <h3>Ghanaian Family Values</h3>
+      <p>We treat every customer as family, with honest, friendly service.</p>
+    </div>
+    <div class="why-card" tabindex="0">
+      <span class="icon"><i class="fas fa-tags"></i></span>
+      <h3>Fair Prices</h3>
+      <p>Luxury for less fair, transparent pricing for all our essentials.</p>
+    </div>
+    <div class="why-card" tabindex="0">
+      <span class="icon"><i class="fas fa-smile-beam"></i></span>
+      <h3>1000+ Happy Homes</h3>
+      <p>Trusted by families, students, and professionals across Ghana.</p>
+    </div>
+  </section>
+
+  <!-- Our Story & Highlights -->
+  <main class="about-story-section" aria-labelledby="about-main-heading">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="images/about-story.jpg" alt="He Reigns Enterprise team at work" loading="lazy">
+      </div>
+      <div class="about-text">
+        <h2 id="about-main-heading">Our Story</h2>
+        <p>
+          <b>He Reigns Enterprise</b> began with a simple dream: to make every Ghanaian home a sanctuary of comfort and style. From our first bedsheet set to today’s curated essentials, we’ve grown by listening to our customers and staying true to our values.
+        </p>
+        <ul class="about-highlights">
+          <li>Founded in Accra, now serving all of Ghana</li>
+          <li>Carefully selected bedsheets, towels, curtains, and more</li>
+          <li>Local expertise, global inspiration</li>
+          <li>Always here for you, before and after your purchase</li>
+        </ul>
+        <p>
+          Thank you for making us part of your home story. We’re here to help you create a space you love, every single day.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" aria-label="Customer Testimonials">
+    <h3>What Our Customers Say</h3>
+    <div class="testimonials-list">
+      <div class="testimonial-card">
+        <div>
+          <p>"The bedsheets were even softer than I expected. Delivery was fast and the prices are unbeatable!"</p>
+        </div>
+        <div class="author"><i class="fas fa-user-circle"></i> Ama, Accra</div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <p>"I’ve ordered twice and every time the service is so friendly. My home feels brand new!"</p>
+        </div>
+        <div class="author"><i class="fas fa-user-circle"></i> Kojo, Kumasi</div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <p>"Finally, a shop where I can get quality curtains and towels without breaking the bank."</p>
+        </div>
+        <div class="author"><i class="fas fa-user-circle"></i> Efua, Tema</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Quote -->
+  <section class="founder-section" aria-label="Founder Message">
+    <div class="founder-quote">
+      "We believe that every Ghanaian deserves a beautiful, comfortable home. Thank you for letting us be part of your story."
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">
+        <span>He Reigns Enterprise</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://web.facebook.com/juliana.aduboahen" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/233553744087" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="container copyright">
+      &copy; 2025 He Reigns Enterprise. All rights reserved.
+    </div>
+  </footer>
+  <script src="cart.js"></script>
+</body>
+</html>

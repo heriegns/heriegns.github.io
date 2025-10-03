@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop Home Essentials | He Reigns Enterprise</title>
+  <meta name="description" content="Discover premium bedsheets, towels, curtains, and home essentials. He Reigns Enterprise brings modern comfort and style to every home in Ghana.">
+  <meta name="keywords" content="home essentials, bedsheets, towels, curtains, Ghana, He Reigns Enterprise, shop, bedding, decor">
+  <meta name="author" content="He Reigns Enterprise">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* SHOP HERO POLISH */
+    .shop-hero {
+      background: linear-gradient(120deg, #f6ede2 60%, #d2e5f3 100%);
+      padding: 3.5rem 0 2.7rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .shop-hero h1 {
+      font-size: 2.7rem;
+      color: #7f3bb3;
+      font-family: 'Montserrat', 'Quicksand', Arial, sans-serif;
+      font-weight: 900;
+      margin-bottom: 0.7rem;
+      letter-spacing: 1.6px;
+      text-shadow: 0 2px 32px #fff3;
+      line-height: 1.15;
+    }
+    .shop-hero .subtitle {
+      color: #503266;
+      font-weight: 500;
+      font-size: 1.18rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .shop-hero .btn {
+      margin-top: 0.6rem;
+      font-size: 1.13rem;
+      padding: 0.77rem 2.2rem;
+      border-radius: 24px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      background: #7f3bb3;
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 24px #cbb9ff24;
+      transition: background 0.18s, color 0.18s, box-shadow 0.15s, transform 0.19s;
+      cursor: pointer;
+    }
+    .shop-hero .btn:hover, .shop-hero .btn:focus {
+      background: #5e288c;
+      color: #fff;
+      box-shadow: 0 7px 30px #7f3bb350;
+      transform: translateY(-2px) scale(1.03);
+    }
+    @media (max-width: 600px) {
+      .shop-hero h1 { font-size: 1.55rem;}
+      .shop-hero .subtitle { font-size: .98rem;}
+      .shop-hero { padding: 2.1rem 0 1.2rem 0;}
+    }
+
+    /* PRODUCT GRID: 3 COL ON MOBILE, 2 TABLET, 3+ DESKTOP */
+    .shop-product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2.1rem;
+      margin-bottom: 2.3rem;
+    }
+    @media (max-width: 1050px) {
+      .shop-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .shop-product-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.7rem;
+      }
+      .shop-product-card img {
+        height: 80px;
+        max-width: 100%;
+      }
+      .shop-product-card {
+        min-height: 160px;
+      }
+    }
+    @media (max-width: 420px) {
+      .shop-product-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* PRODUCT CARD POLISH */
+    .shop-product-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 20px #7f3bb320;
+      padding: 1.3rem 0.9rem 1.2rem 0.9rem;
+      text-align: center;
+      transition: box-shadow 0.22s, transform 0.19s;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+    }
+    .shop-product-card:focus-within, .shop-product-card:hover {
+      box-shadow: 0 6px 38px #7f3bb345;
+      transform: translateY(-6px) scale(1.025);
+      z-index: 2;
+    }
+    .shop-product-card img {
+      width: 100%;
+      max-width: 150px;
+      max-height: 110px;
+      object-fit: cover;
+      border-radius: 13px;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 10px #b89be620;
+      transition: transform 0.22s;
+      aspect-ratio: 5/4;
+      background: #f7f7f9;
+    }
+    .shop-product-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 0.26rem;
+      color: #7f3bb3;
+      font-weight: 700;
+      letter-spacing: 0.13px;
+    }
+    .shop-product-card .price {
+      color: #2e1e41;
+      background: #f6ede2;
+      padding: 5px 13px;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 1.03rem;
+      margin-bottom: 0.7rem;
+      display: inline-block;
+      letter-spacing: 0.2px;
+    }
+    .shop-product-card .btn-cart {
+      margin-top: auto;
+      background: #7f3bb3;
+      color: #fff;
+      border: none;
+      border-radius: 18px;
+      padding: 0.5em 1.15em;
+      font-size: 0.98em;
+      font-weight: 700;
+      box-shadow: 0 1px 8px #7f3bb318;
+      transition: background 0.18s, color 0.18s, transform 0.15s;
+      cursor: pointer;
+    }
+    .shop-product-card .btn-cart:hover, .shop-product-card .btn-cart:focus {
+      background: #5e288c;
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+    }
+    /* Special card for contact */
+    .special-card {
+      background: #e8f5e9;
+      border: 1.5px dashed #2ab573;
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+      cursor: default;
+    }
+    .special-card-content {
+      text-align: center;
+      width: 100%;
+      color: #297755;
+      font-size: 1.04rem;
+    }
+    .special-card-content a {
+      color: #2ab573;
+      text-decoration: underline;
+    }
+    .special-card-content a:hover {
+      color: #297755;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="He Reigns Enterprise Home">He Reigns Enterprise</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" tabindex="0" aria-label="Toggle navigation"><span></span></label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active" aria-current="page">Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="Shopping Cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-badge" aria-live="polite">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Shop Hero (NO LOGO) -->
+  <section class="shop-hero" aria-labelledby="shop-hero-heading">
+    <h1 id="shop-hero-heading">Shop Home Essentials</h1>
+    <div class="subtitle">Discover premium bedsheets, towels, curtains, and more.<br>
+      Modern comfort and style for every home in Ghana.</div>
+    <a href="#products" class="btn" style="margin-top:1rem;">Browse Products</a>
+  </section>
+
+  <!-- Product Grid -->
+  <main>
+    <section id="products" aria-labelledby="products-heading" style="padding-top:2rem;">
+      <div class="container">
+        <h2 class="section-title" id="products-heading">Our Products</h2>
+        <div class="shop-product-grid" role="list">
+          <!-- PRODUCT LIST STARTS -->
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/bedsheet-set.jpg" alt="Bedsheet Set - soft and comfortable" loading="lazy">
+            <h3>Bedsheet Set</h3>
+            <p class="price">GHC 200</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Bedsheet Set"
+              data-price="200"
+              data-image="images/bedsheet-set.jpg"
+              aria-label="Add Bedsheet Set to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/soft-towels.jpg" alt="Soft Towels - absorbent and plush" loading="lazy">
+            <h3>Soft Towels</h3>
+            <p class="price">GHC 45</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Soft Towels"
+              data-price="45"
+              data-image="images/soft-towels.jpg"
+              aria-label="Add Soft Towels to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/elegant-curtains.jpg" alt="Elegant Curtains - stylish and modern" loading="lazy">
+            <h3>Elegant Curtains</h3>
+            <p class="price">GHC 120</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Elegant Curtains"
+              data-price="120"
+              data-image="images/elegant-curtains.jpg"
+              aria-label="Add Elegant Curtains to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/comfy-pillows.jpg" alt="Comfy Pillows - fluffy and supportive" loading="lazy">
+            <h3>Comfy Pillows</h3>
+            <p class="price">GHC 80</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Comfy Pillows"
+              data-price="80"
+              data-image="images/comfy-pillows.jpg"
+              aria-label="Add Comfy Pillows to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/king-size-bedsheets.jpg" alt="King Size Bedsheets - luxurious comfort" loading="lazy">
+            <h3>King Size Bed</h3>
+            <p class="price">GHC 2200</p>
+            <button class="btn-cart add-to-cart"
+              data-name="King Size Bed"
+              data-price="2200"
+              data-image="images/king-size-bed.jpg"
+              aria-label="Add King Size Bed to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/blanket.jpg" alt="Premium Blanket - soft and warm" loading="lazy">
+            <h3>Premium Blanket</h3>
+            <p class="price">GHC 150</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Premium Blanket"
+              data-price="150"
+              data-image="images/blanket.jpg"
+              aria-label="Add Premium Blanket to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/bathmat.jpg" alt="Bathroom Mat - non-slip and absorbent" loading="lazy">
+            <h3>Bathroom Mat</h3>
+            <p class="price">GHC 35</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Bathroom Mat"
+              data-price="35"
+              data-image="images/bathmat.jpg"
+              aria-label="Add Bathroom Mat to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/cushion.jpg" alt="Decorative Cushion - stylish accent" loading="lazy">
+            <h3>Decorative Cushion</h3>
+            <p class="price">GHC 55</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Decorative Cushion"
+              data-price="55"
+              data-image="images/cushion.jpg"
+              aria-label="Add Decorative Cushion to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/curtain-poles.jpg" alt="Curtain Poles - durable support" loading="lazy">
+            <h3>Curtain Poles</h3>
+            <p class="price">GHC 110</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Curtain Poles"
+              data-price="110"
+              data-image="images/curtain-poles.jpg"
+              aria-label="Add Curtain Poles to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/cotten-pillow-cases.jpg" alt="Cotton Pillow Cases - comfortable and cool" loading="lazy">
+            <h3>Cotton Pillow Cases</h3>
+            <p class="price">GHS 20</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Cotton Pillow Cases"
+              data-price="20"
+              data-image="images/cotten-pillow-cases.jpg"
+              aria-label="Add Cotton Pillow Cases to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/student-mattress.jpg" alt="Student Mattress - affordable comfort" loading="lazy">
+            <h3>Student Mattress</h3>
+            <p class="price">GHC 350</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Student Mattress"
+              data-price="250"
+              data-image="images/student-mattress.jpg"
+              aria-label="Add Student Mattress to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <div class="shop-product-card" role="listitem" tabindex="0">
+            <img src="images/curtain-rings.jpg" alt="Curtain Rings - set of 10, sturdy" loading="lazy">
+            <h3>Curtain Rings</h3>
+            <p class="price">GHC 55</p>
+            <button class="btn-cart add-to-cart"
+              data-name="Curtain Rings"
+              data-price="55"
+              data-image="images/cushion.jpg"
+              aria-label="Add Curtain Rings to cart">
+              <i class="fa fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+          <!-- SPECIAL CARD AT THE END -->
+          <div class="shop-product-card special-card" tabindex="0" aria-label="More products available">
+            <div class="special-card-content">
+              <i class="fa fa-phone fa-2x" style="color:#2ab573; margin-bottom:10px;" aria-hidden="true"></i>
+              <h3>Can't find what you want?</h3>
+              <p>
+                We have many more items in stock!<br>
+                Call or WhatsApp us at <a href="tel:+233553744087">+233 55 374 4087</a> or
+                <a href="https://wa.me/233553744087" target="_blank">chat on WhatsApp</a>.<br>
+                We'll be happy to assist you!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">
+        <span>He Reigns Enterprise</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://web.facebook.com/juliana.aduboahen" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/233553744087" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="container copyright">
+      &copy; 2025 He Reigns Enterprise. All rights reserved.
+    </div>
+  </footer>
+  <script src="cart.js"></script>
+</body>
+</html>
